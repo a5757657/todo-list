@@ -1,0 +1,79 @@
+@keyframes fadeinbg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeinmodal {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes fadeoutbg {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.ModalBg {
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(173, 216, 230, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeinbg 0.5s;
+
+  .Modal {
+    width: 450px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px -5px black;
+    animation: fadeinmodal 0.5s;
+
+    .title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .content {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: flex;
+      justify-content: flex-end;
+      column-gap: 10px;
+      div {
+        padding: 5px 10px;
+        background-color: lightblue;
+        cursor: pointer;
+      }
+    }
+  }
+  .fadeout {
+    animation: fadeout 0.5s;
+  }
+}
+.fadeoutbg {
+  animation: fadeoutbg 0.5s;
+}
