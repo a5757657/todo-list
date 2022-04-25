@@ -13,7 +13,7 @@ const ModalComplete = ({
     setFadeOut(true);
     setTimeout(() => {
       setCompleteModal(false);
-    }, 500);
+    }, 450);
   };
 
   const completeData = () => {
@@ -30,7 +30,7 @@ const ModalComplete = ({
     setTimeout(() => {
       setTodoList(data2);
       setCompleteModal(false);
-    }, 500);
+    }, 450);
   };
   return (
     <div className={fadeOut ? "ModalBg fadeoutbg" : "ModalBg"}>

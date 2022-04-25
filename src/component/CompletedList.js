@@ -1,7 +1,8 @@
-import { render } from "@testing-library/react";
-import React from "react";
+import React, { useEffect } from "react";
 
-const CompletedList = ({ setTodoList, todoList, trigger }) => {
+const CompletedList = ({ setTodoList, todoList }) => {
+  
+
   let renderList;
   const render = () => {
     let data = todoList;
@@ -10,7 +11,7 @@ const CompletedList = ({ setTodoList, todoList, trigger }) => {
     });
     renderList = data2.map((v) => {
       let a = "";
-      const date = new Date
+      const date = new Date();
       const now = +new Date();
       const time = Math.floor((now - v.finishedTime) / 1000);
       if (time < 60) {
@@ -20,7 +21,12 @@ const CompletedList = ({ setTodoList, todoList, trigger }) => {
       } else if (time >= 3600 && time < 60 * 60 * 24) {
         a = parseInt(time / (60 * 60)) + "小時";
       } else {
-        a = date.getFullYear(v.finishedTime)+'-'+date.getMonth(v.finishedTime)+'-'+date.getDate(v.finishedTime)
+        a =
+          date.getFullYear(v.finishedTime) +
+          "-" +
+          date.getMonth(v.finishedTime) +
+          "-" +
+          date.getDate(v.finishedTime);
         console.log(date.getFullYear(v.finishedTime));
       }
       return (
@@ -31,7 +37,9 @@ const CompletedList = ({ setTodoList, todoList, trigger }) => {
       );
     });
   };
-  render();
+  if (todoList !== null) {
+    render();
+  }
   return <div className="completedListWrap">{renderList}</div>;
 };
 

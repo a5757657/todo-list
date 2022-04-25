@@ -22,6 +22,7 @@ const TodoList = () => {
         bgc={bgc}
         setBgc={setBgc}
         trigger={trigger}
+        setTrigger={setTrigger}
       />
     </div>
   );

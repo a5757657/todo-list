@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ToBeCompletedList from "./ToBeCompletedList";
 import CompletedList from "./CompletedList";
 
-const Main = ({ setTodoList, todoList, bgc, setBgc, trigger }) => {
+const Main = ({ setTodoList, todoList, bgc, setBgc, trigger, setTrigger }) => {
   const toBeCompletedHandler = () => {
     setBgc(true);
   };
@@ -12,7 +12,7 @@ const Main = ({ setTodoList, todoList, bgc, setBgc, trigger }) => {
 
   return (
     <>
-      <main>    
+      <main>
         <div className="tabs">
           <div
             onClick={toBeCompletedHandler}

@@ -20,7 +20,10 @@ const ToBeCompletedList = ({ setTodoList, todoList, trigger }) => {
     let a = true;
 
     if (a) {
-      render();
+      if (todoList !== null) {
+        console.log('trigger')
+        render();
+      }
     }
 
     return () => {

@@ -8,7 +8,7 @@ const ModalRemove = ({ setModal, id, content, setTodoList, todoList }) => {
     setFadeOut(true);
     setTimeout(() => {
       setModal(false);
-    }, 500);
+    }, 450);
   };
 
   const removeData = () => {
@@ -19,7 +19,7 @@ const ModalRemove = ({ setModal, id, content, setTodoList, todoList }) => {
     setTimeout(() => {
       setTodoList(data);
       setModal(false);
-    }, 500);
+    }, 450);
   };
   return (
     <div className={fadeOut ? "ModalBg fadeoutbg" : "ModalBg"}>
