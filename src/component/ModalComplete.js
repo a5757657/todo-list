@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Modal.scss";
+import "./../style/Modal.scss";
 
 const ModalComplete = ({
   id,

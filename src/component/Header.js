@@ -18,8 +18,8 @@ const Header = ({ setTodoList, todoList, setBgc, trigger, setTrigger }) => {
         finished: false,
         finishedTime: null,
       };
-      let a = [];
       
+      let a = [];
       if (todoList !== null) {
         a = todoList;
       }
