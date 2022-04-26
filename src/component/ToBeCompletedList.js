@@ -21,7 +21,6 @@ const ToBeCompletedList = ({ setTodoList, todoList, trigger }) => {
 
     if (a) {
       if (todoList !== null) {
-        console.log('trigger')
         render();
       }
     }

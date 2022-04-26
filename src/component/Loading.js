@@ -1,4 +1,5 @@
 import React from "react";
+// 按鈕呈現loading狀態時的元件
 
 const Loading = () => {
   return (

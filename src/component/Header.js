@@ -3,14 +3,16 @@ import Loading from "./Loading";
 import Send from "./Send";
 
 const Header = ({ setTodoList, todoList, setBgc, trigger, setTrigger }) => {
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [disabled, setDisabled] = useState(false);
-  const input = useRef();
+  const [error, setError] = useState(false); // 表單驗證的狀態
+  const [loading, setLoading] = useState(false); // 送出按鈕呈現loading的狀態
+  const [disabled, setDisabled] = useState(false); // input呈現disabled的狀態
+  const input = useRef();// 抓實體DOM
+
   const callapi = async () => {
     setError(false);
     setLoading(true);
     setDisabled(true);
+
     await setTimeout(() => {
       const data = {
         id: +new Date(),
@@ -27,13 +29,15 @@ const Header = ({ setTodoList, todoList, setBgc, trigger, setTrigger }) => {
       localStorage.setItem("todolist", JSON.stringify(a));
       setTodoList(a);
       setLoading(false);
-      setBgc(true);
+      setBgc(true); //送出後顯示未完成的清單
       setDisabled(false);
-      setTrigger(trigger + 1);
+      setTrigger(trigger + 1); // 觸發Main元件Render
       input.current.value = "";
+
     }, 1300);
   };
 
+  //按下送出時的表單驗證及寫入資料
   const checkInputSend = () => {
     if (input.current.value.trim().length <= 0) {
       setError(true);
@@ -42,12 +46,15 @@ const Header = ({ setTodoList, todoList, setBgc, trigger, setTrigger }) => {
     }
   };
 
+  //按下Enter時的表單驗證及寫入資料
   const keydownCheckInputSend = (e) => {
     onChangecheckInput();
     if (error === false && e.key === "Enter" && loading === false) {
       callapi();
     }
   };
+
+  //input onChange的表單驗證
   const onChangecheckInput = () => {
     if (input.current.value.trim().length <= 0) {
       setError(true);

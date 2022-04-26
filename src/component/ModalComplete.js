@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./../style/Modal.scss";
+// 完成的代辦事項的光箱
 
 const ModalComplete = ({
   id,
@@ -8,7 +9,7 @@ const ModalComplete = ({
   todoList,
   setCompleteModal,
 }) => {
-  const [fadeOut, setFadeOut] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false); // 控制光箱漸入漸出的狀態
   const showModal = () => {
     setFadeOut(true);
     setTimeout(() => {
@@ -36,7 +37,7 @@ const ModalComplete = ({
     <div className={fadeOut ? "ModalBg fadeoutbg" : "ModalBg"}>
       <div className={fadeOut ? "Modal fadeout" : "Modal"}>
         <div className="title">提示</div>
-        <div className="content">是否完成 '{content}' ?</div>
+        <div className="content">是否完成 {"'" + content + "'"} ?</div>
         <div className="btn">
           <div onClick={showModal} className="cancle">
             取消

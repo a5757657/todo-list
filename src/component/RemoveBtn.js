@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ModalRemove from "./ModalRemove";
 
+// 移除按鈕的元件
 const RemoveBtn = ({ id, content, setTodoList, todoList }) => {
   const [modal, setModal] = useState(false);
   return (

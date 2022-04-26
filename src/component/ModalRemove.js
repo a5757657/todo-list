@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./../style/Modal.scss";
+// 移除代辦事項的光箱
 
 const ModalRemove = ({ setModal, id, content, setTodoList, todoList }) => {
   const [fadeOut, setFadeOut] = useState(false); // 控制Modal的漸入漸出動畫
@@ -15,7 +16,7 @@ const ModalRemove = ({ setModal, id, content, setTodoList, todoList }) => {
     setFadeOut(true);
     let data = todoList;
     data = data.filter((el) => el.id !== id);
-    window.localStorage.setItem("todolist", JSON.stringify(data))
+    window.localStorage.setItem("todolist", JSON.stringify(data));
     setTimeout(() => {
       setTodoList(data);
       setModal(false);
